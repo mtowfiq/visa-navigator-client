@@ -7,17 +7,24 @@ import Home from "../Layouts/Home";
 import Register from "../Pages/Register";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Login";
+import Homepage from "../Pages/Homepage";
+import AddVisa from "../Pages/AddVisa";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
-    // children: {
-    //     [
-    //         path: "",
-    //         element:
-    //     ]
-    // }
+    children: [
+        {
+            path: "/",
+            element: <Homepage></Homepage>
+        },
+        {
+          path: "/addvisa",
+          element: <PrivateRoute><AddVisa></AddVisa></PrivateRoute>
+        }
+      ]
   },
   {
     path: "/authentication",
@@ -31,7 +38,7 @@ const router = createBrowserRouter([
         path: "/authentication/login",
         element: <Login></Login>,
       },
-]
+      ]
   },
 ]
 );
