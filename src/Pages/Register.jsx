@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const {createUser} = useContext(AuthContext)
+  const {createUser, updateUserProfile, setUser} = useContext(AuthContext)
   const [error, setError] = useState("")
 
   const handleRegister = (e) => {
@@ -41,6 +41,14 @@ const Register = () => {
         createUser(email, password)
         .then(result =>{
           console.log(result.user)
+          setUser(result.user)
+          updateUserProfile({displayName: name, photoURL: photo})
+          .then(() =>{
+            console.log("Profile updated with name and photo")
+          })
+          .catch(err =>{
+            console.log(err.message)
+          })
           setError("")
           e.target.reset()
         })

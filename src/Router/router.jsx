@@ -40,6 +40,10 @@ const router = createBrowserRouter([
       },
       ]
   },
+  {
+    path: "*",
+    element: <h2>Error</h2>
+  }
 ]
 );
 

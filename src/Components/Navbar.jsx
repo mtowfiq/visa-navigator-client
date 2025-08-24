@@ -15,6 +15,8 @@ const Navbar = () => {
       console.log(error.message)
     })
   }
+
+  // console.log(user)
   return (
     <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
@@ -32,7 +34,7 @@ const Navbar = () => {
   <div className="navbar-end">
     {
       user? (<div>
-        Logged in <br />
+        <h2 className="text-green-600 font-medium text-xl border-2 border-gray-200 p-2 rounded-3xl">{user.displayName} </h2>
         <button className="btn btn-ghost" onClick={handleLogout}>Logout</button>
       </div>) : (<div>
           <Link to='/authentication/register' className="btn">Registser</Link>
