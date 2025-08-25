@@ -25,7 +25,7 @@ const Navbar = () => {
   <div className="navbar-center">
     <ul className="menu menu-horizontal px-1 space-x-6">
       <Link to="/">Home</Link>
-      <Link>All Visas</Link>
+      <Link to="/allvisas">All Visas</Link>
       <Link to="/addvisa">Add Visa</Link>
       <Link>My added visas</Link>
       <Link>My visa applications</Link>
