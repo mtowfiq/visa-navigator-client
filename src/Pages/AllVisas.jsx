@@ -4,7 +4,7 @@ import VisaCard from '../Components/VisaCard';
 
 const AllVisas = () => {
     const visas = useLoaderData()
-    console.log(visas)
+    // console.log(visas)
     return (
         <div>
             <h2 className='text-center m-3'>All Visas:</h2>

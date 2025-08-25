@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const VisaCard = ({visa}) => {
-    console.log(visa)
+    // console.log(visa)
     const {image, name, visaT, _id, email, description} = visa
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
@@ -20,7 +21,7 @@ const VisaCard = ({visa}) => {
           {description}
         </p>
         <div className="card-actions justify-center">
-          <button className="btn btn-primary">Details</button>
+          <Link to={`/visa/${_id}`}><button className="btn btn-primary">Details</button></Link>
         </div>
       </div>
     </div>

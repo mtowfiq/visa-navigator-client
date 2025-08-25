@@ -11,6 +11,7 @@ import Homepage from "../Pages/Homepage";
 import AddVisa from "../Pages/AddVisa";
 import PrivateRoute from "./PrivateRoute";
 import AllVisas from "../Pages/AllVisas";
+import VisaDetails from "../Pages/VisaDetails";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
             path: "/allvisas",
             element: <AllVisas></AllVisas>,
             loader: () => fetch("http://localhost:5000/visas")
+        },
+        {
+            path: "/visa/:id",
+            element: <PrivateRoute><VisaDetails></VisaDetails></PrivateRoute>,
+            loader: ({params}) => fetch(`http://localhost:5000/visa/${params.id}`)
         },
       ]
   },
