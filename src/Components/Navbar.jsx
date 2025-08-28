@@ -27,8 +27,8 @@ const Navbar = () => {
       <Link to="/">Home</Link>
       <Link to="/allvisas">All Visas</Link>
       <Link to="/addvisa">Add Visa</Link>
-      <Link>My added visas</Link>
-      <Link>My visa applications</Link>
+      <Link to="/my-added-visas">My added visas</Link>
+      <Link to="/my-visa-applications">My visa applications</Link>
     </ul>
   </div>
   <div className="navbar-end">
